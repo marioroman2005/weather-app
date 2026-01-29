@@ -1,16 +1,56 @@
-# React + Vite
+# 🌦️ App del Clima (Weather App)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Una aplicación web moderna y elegante para consultar el clima en cualquier ciudad del mundo en tiempo real. Construida con React y OpenWeather API, presentando un diseño Glassmorphism limpio y animaciones suaves.
 
-Currently, two official plugins are available:
+![Preview del Proyecto](public/preview_weather.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Características
 
-## React Compiler
+-   **Búsqueda en Tiempo Real**: Consulta el clima de cualquier ciudad al instante.
+-   **Información Detallada**:
+    -   Temperatura actual y descripción del clima.
+    -   Humedad, Velocidad del Viento, Sensación Térmica y Presión Atmosférica.
+-   **Diseño Moderno**:
+    -   Interfaz estilo **Glassmorphism** (efecto de cristal esmerilado).
+    -   Totalmente **Responsive** (se adapta a móviles y escritorio).
+    -   Animaciones de entrada y transiciones suaves.
+    -   Alto contraste y legibilidad.
+-   **Manejo de Errores**: Alertas amigables cuando no se encuentra una ciudad o hay problemas de conexión.
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+## 🛠️ Tecnologías Usadas
 
-## Expanding the ESLint configuration
+-   **React** (Vite) - Framework de UI.
+-   **CSS3** - Variables, Flexbox, Grid y Animaciones.
+-   **OpenWeatherMap API** - Fuente de datos meteorológicos.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🚀 Instalación y Uso
+
+1.  **Clonar el repositorio**:
+    ```bash
+    git clone https://github.com/marioroman2005/weather-app.git
+    cd weather-app
+    ```
+
+2.  **Instalar dependencias**:
+    ```bash
+    npm install
+    ```
+
+3.  **Configurar API Key**:
+    Abre `src/App.jsx` y asegúrate de tener una API Key válida de [OpenWeatherMap](https://openweathermap.org/) en la constante `API_KEY`.
+
+4.  **Correr el proyecto**:
+    ```bash
+    npm run dev
+    ```
+
+5.  Abre tu navegador en `http://localhost:5173`.
+
+## 🎨 Estructura del Proyecto
+
+-   `src/components/`: Contiene los componentes reutilizables (`SearchBar`, `WeatherDisplay`, `WeatherDetails`, `ErrorMessage`).
+-   `src/App.css`: Estilos globales y específicos con diseño Glassmorphism.
+-   `src/App.jsx`: Componente principal y lógica de conexión a la API.
+
+---
+Hecho con 💙 por Mario Román
