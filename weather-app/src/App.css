@@ -1,42 +1,212 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  background: linear-gradient(to bottom right, #4facfe 0%, #00f2fe 100%);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  transition: background 0.5s ease-in-out;
+  justify-content: center;
+}
+
 #root {
+  width: 100%;
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* Estilos de la Barra de Búsqueda */
+form {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 10px 20px;
+  border-radius: 50px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  margin-bottom: 2rem;
+  transition: all 0.3s ease;
 }
 
-@keyframes logo-spin {
+form:focus-within {
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 1.2rem;
+  padding: 0 10px;
+  width: 200px;
+  font-family: inherit;
+}
+
+input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+button {
+  border-radius: 50px;
+  border: none;
+  padding: 0.8em 1.5em;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: inherit;
+  background-color: white;
+  color: #00f2fe;
+  /* Azul a juego con el fondo por defecto */
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+button:hover {
+  transform: scale(1.05);
+  background-color: #f0f0f0;
+}
+
+/* Estilos de la Tarjeta del Clima */
+.weather-card {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 2rem 4rem;
+  text-align: center;
+  animation: slideUp 0.5s ease-out;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.weather-card h2 {
+  font-size: 2.5rem;
+  margin: 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.weather-card img {
+  width: 120px;
+  height: 120px;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+}
+
+.weather-card .temp {
+  font-size: 5rem;
+  font-weight: 700;
+  margin: -10px 0 10px 0;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.weather-card .description {
+  font-size: 1.5rem;
+  text-transform: capitalize;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+/* Estilos de Detalles del Clima */
+.weather-details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  width: 100%;
+  max-width: 400px;
+  animation: slideUp 0.7s ease-out;
+}
+
+.detail-item {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  border-radius: 15px;
+  text-align: center;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.2s;
+}
+
+.detail-item:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.detail-label {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin-bottom: 5px;
+}
+
+.detail-value {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+
+/* Mensaje de Error */
+.error-alert {
+  margin-top: 20px;
+  background-color: rgba(255, 99, 71, 0.2);
+  color: #fff;
+  padding: 10px 25px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 99, 71, 0.5);
+  backdrop-filter: blur(5px);
+  animation: shake 0.5s ease-in-out;
+}
+
+/* Animaciones */
+@keyframes slideUp {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
+    transform: translateY(30px);
   }
+
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+@keyframes shake {
+
+  0%,
+  100% {
+    transform: translateX(0);
   }
-}
 
-.card {
-  padding: 2em;
-}
+  25% {
+    transform: translateX(-5px);
+  }
 
-.read-the-docs {
-  color: #888;
+  75% {
+    transform: translateX(5px);
+  }
 }

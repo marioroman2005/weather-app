@@ -5,7 +5,7 @@ import { WeatherDisplay } from './components/WeatherDisplay'
 import { ErrorMessage } from './components/ErrorMessage'
 import { useState } from 'react'
 
-const API_KEY = 'ap10c707fadaf991f0edaf810fec369cf7i'
+const API_KEY = '8da0ace451ff0b425cd1ff0e43b0d674'
 
 
 function App() {
@@ -35,6 +35,8 @@ function App() {
     <>
       <SearchBar onSearch={fetchWeather} />
       <WeatherDisplay weather={weather} />
+      <WeatherDetails weather={weather} />
+      <ErrorMessage message={error} />
     </>
   )
 }
